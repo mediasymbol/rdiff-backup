@@ -35,6 +35,9 @@ if [ -z "$2" ]; then
 else
     BACKUP_PATH="$BACKUP_PATH/$2"
     RESTORE_PATH="$RESTORE_PATH/$2"
+
+    mkdir -p "$RESTORE_PATH"
+    rm -rf "$RESTORE_PATH/*"
 fi
 
 RESTORE_ERROR=/tmp/backup-error
